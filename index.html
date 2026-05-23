@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bala Motors | Motorcycle Repair Shop</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+    padding-top:80px;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#8b5cf6;
+    filter:blur(200px);
+    opacity:0.1;
+    top:-150px;
+    right:-150px;
+    pointer-events:none;
+    z-index:0;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#6366f1;
+    filter:blur(200px);
+    opacity:0.08;
+    bottom:-150px;
+    left:-150px;
+    pointer-events:none;
+    z-index:0;
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.hero-text h1{
+    font-size:52px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.hero-text .gradient-text{
+    background:linear-gradient(135deg, #8b5cf6, #a78bfa, #6366f1);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+.hero-text .highlight{
+    background:rgba(139,92,246,0.1);
+    padding:5px 15px;
+    border-radius:10px;
+    display:inline-block;
+    margin-top:10px;
+    font-size:18px;
+    border:1px solid rgba(139,92,246,0.3);
+    color:#a78bfa;
+}
+
+.hero-text p{
+    margin-top:20px;
+    color:#9ca3af;
+    font-size:17px;
+    line-height:1.8;
+}
+
+.hero-btns{
+    margin-top:35px;
+}
+
+/* STATS */
+.stats{
+    margin-top:40px;
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.stat-box h2{
+    background:linear-gradient(135deg, #8b5cf6, #a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    font-weight:700;
+    font-size:28px;
+}
+
+.stat-box p{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+/* PHONE IMAGE */
+.phone-container{
+    position:relative;
+    text-align:center;
+}
+
+.phone-glow{
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#8b5cf6;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:0.2;
+    z-index:-1;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.phone-image{
+    width:100%;
+    max-width:380px;
+    animation:float 4s ease-in-out infinite;
+    filter:drop-shadow(0 0 30px rgba(139,92,246,.5));
+    border-radius:20px;
+}
+
+@keyframes float{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-20px)}
+    100%{transform:translateY(0)}
+}
+
+/* WELCOME SECTION */
+.welcome-section{
+    padding:80px 0;
+}
+
+.welcome-text{
+    font-size:22px;
+    font-weight:600;
+    color:white;
+}
+
+.welcome-text .gradient-text{
+    background:linear-gradient(135deg, #8b5cf6, #a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* IMAGE SLIDER */
+.slider-container{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    margin-top:40px;
+    border:1px solid rgba(139,92,246,0.2);
+}
+
+.image-slider{
+    display:flex;
+    transition:transform 0.5s ease;
+    gap:20px;
+}
+
+.image-slider img{
+    min-width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(139,92,246,0.8);
+    color:white;
+    border:none;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    z-index:10;
+    transition:0.3s;
+}
+
+.slider-btn:hover{
+    background:#8b5cf6;
+    box-shadow:0 0 20px rgba(139,92,246,0.5);
+}
+
+.slider-btn.prev{
+    left:15px;
+}
+
+.slider-btn.next{
+    right:15px;
+}
+
+@media(max-width:991px){
+    .hero{
+        padding-top:70px;
+        text-align:center;
+    }
+    .hero-text h1{
+        font-size:36px;
+    }
+    .phone-container{
+        margin-top:40px;
+    }
+    .stats{
+        justify-content:center;
+    }
+    .phone-image{
+        max-width:300px;
+    }
+}
+
+@media(max-width:576px){
+    .hero-text h1{
+        font-size:28px;
+    }
+    .hero-text .highlight{
+        font-size:14px;
+    }
+    .hero-text p{
+        font-size:15px;
+    }
+    .image-slider img{
+        height:250px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<!-- CHAT BUTTON -->
+<div class="chat-btn" onclick="toggleChat()">
+<i class="bi bi-chat-dots-fill"></i>
+</div>
+
+<!-- CHAT BOX -->
+<div class="chat-box" id="chatBox">
+<div class="chat-header">
+<span>Bala Motors Support</span>
+<span onclick="toggleChat()">✖</span>
+</div>
+<div class="chat-body">
+<div class="chat-msg">Hi 👋 How can we help you?</div>
+<button onclick="sendQuick('Engine Tune-up')">🔧 Engine Tune-up</button>
+<button onclick="sendQuick('Brake Service')">🛑 Brake Service</button>
+<button onclick="sendQuick('Other Issue')">📞 Other Issue</button>
+</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">Bala Motors</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="hero-text" data-aos="fade-right">
+<h1>Fast & Trusted <span class="gradient-text">Motorcycle Repair</span> Shop</h1>
+<div class="highlight">Professional "Freelance Motorcycle Repair Service"</div>
+<p>Professional motorcycle repair solutions with smart scheduling and expert mechanics at your service.</p>
+<div class="hero-btns">
+<a href="Contact.html#bookrepair" class="btn-custom btn-purple">Book Services</a>
+<a href="https://wa.me/601117349896" target="_blank" class="btn-custom btn-outline-custom">WhatsApp Us</a>
+</div>
+<div class="stats">
+<div class="stat-box"><h2>5000+</h2><p>Motorcycles Fixed</p></div>
+<div class="stat-box"><h2>4.9★</h2><p>Customer Rating</p></div>
+<div class="stat-box"><h2>27+</h2><p>Years Experience</p></div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="phone-container" data-aos="fade-left">
+<div class="phone-glow"></div>
+<img src="logo.png" class="phone-image" alt="Motorcycle Repair">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WELCOME SECTION -->
+<section class="welcome-section">
+<div class="container">
+<div class="section-title" data-aos="fade-up">
+<h2>Welcome to <span class="gradient-text">Bala Motors</span></h2>
+<p class="welcome-text">We Won't Fix It - We Will <span class="gradient-text">Create It</span></p>
+</div>
+
+<!-- IMAGE SLIDER -->
+<div class="slider-container" data-aos="zoom-in">
+<button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+<div class="image-slider" id="imageSlider">
+<img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1200&auto=format&fit=crop" alt="Motorcycle Service 1">
+<img src="https://images.unsplash.com/photo-1580310614729-ccd69652491d?q=80&w=1200&auto=format&fit=crop" alt="Motorcycle Service 2">
+<img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=1200&auto=format&fit=crop" alt="Motorcycle Service 3">
+<img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1200&auto=format&fit=crop" alt="Motorcycle Service 1">
+<img src="https://images.unsplash.com/photo-1580310614729-ccd69652491d?q=80&w=1200&auto=format&fit=crop" alt="Motorcycle Service 2">
+</div>
+<button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<h4>Bala Motors</h4>
+<p class="text-secondary">Fast & Trusted Motorcycle Repair Shop</p>
+<div class="social-icons">
+<a href="https://wa.me/601117349896" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a href="https://www.instagram.com/balamotors_kulim?igsh=MWhoMzZ2YWgzcnhmag%3D%3D&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
+<a href="https://www.tiktok.com/@bala.motors.kulim?_r=1&_t=ZS-96RLqEryTED" target="_blank"><i class="bi bi-tiktok"></i></a>
+<a href="#"><i class="bi bi-facebook"></i></a>
+</div>
+<p class="text-secondary mt-3">© Bala Motors Kulim 2026 - All Rights Reserved</p>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
