@@ -362,6 +362,46 @@ footer .social-icons a:hover{
 }
 
 /* ========================= */
+/* SERVICE PRICE STYLING */
+/* ========================= */
+.service-card ul li .price {
+    color: #a78bfa;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* ========================= */
+/* NEW: DISABLED FORM FIELDS */
+/* ========================= */
+.form-control:disabled {
+    background-color: #1a1a3e;
+    color: #6b7280;
+    cursor: not-allowed;
+    border-color: rgba(139,92,246,0.05);
+}
+.form-check-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ========================= */
+/* NEW: ESTIMATE PRICE BOX */
+/* ========================= */
+#estimateBox {
+    transition: all 0.3s ease;
+}
+#estimateBox span:first-child {
+    color: #a78bfa;
+    font-weight: 600;
+}
+#estimateBox span:last-child {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* ========================= */
 /* RESPONSIVE - TABLET */
 /* ========================= */
 @media(max-width:991px){
@@ -615,4 +655,16 @@ footer .social-icons a:hover{
     iframe{
         height:200px;
     }
+}
+
+/* Disabled form fields */
+.form-control:disabled {
+    background-color: #1a1a3e;
+    color: #6b7280;
+    cursor: not-allowed;
+    border-color: rgba(139,92,246,0.05);
+}
+.form-check-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
 }

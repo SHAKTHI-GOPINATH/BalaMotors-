@@ -79,6 +79,10 @@
     font-size:15px;
     border-bottom:1px solid rgba(139,92,246,0.08);
     transition:0.3s;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
 }
 
 .service-card ul li:last-child{
@@ -94,6 +98,14 @@
     content:"▸";
     color:#8b5cf6;
     margin-right:10px;
+}
+
+/* PRICE STYLING */
+.service-card ul li .price {
+    color: #a78bfa;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 .whatsapp-card{
@@ -148,11 +160,11 @@
 <div class="service-card">
 <h4>🔧 Major Services</h4>
 <ul>
-<li>Full Engine Tune-up</li>
-<li>Periodic Mileage Servicing</li>
-<li>Complete Bike Health Inspection</li>
-<li>Pre-Purchase Bike Inspection</li>
-<li>Post-Accident Assessment & Repair</li>
+<li>Full Engine Tune-up <span class="price">RM 150</span></li>
+<li>Periodic Mileage Servicing <span class="price">RM 80</span></li>
+<li>Complete Bike Health Inspection <span class="price">RM 50</span></li>
+<li>Pre-Purchase Bike Inspection <span class="price">RM 60</span></li>
+<li>Post-Accident Assessment & Repair <span class="price">RM 100</span></li>
 </ul>
 </div>
 </div>
@@ -162,12 +174,12 @@
 <div class="service-card">
 <h4>⚙️ Engine & Carburetor</h4>
 <ul>
-<li>Carburetor Tuning & Cleaning</li>
-<li>Carburetor Rebuild & Synchronization</li>
-<li>Fuel Injector Cleaning & Calibration</li>
-<li>Valve Clearance Adjustment</li>
-<li>Top-End Engine Overhaul</li>
-<li>Full Engine Rebuild</li>
+<li>Carburetor Tuning & Cleaning <span class="price">RM 60</span></li>
+<li>Carburetor Rebuild & Synchronization <span class="price">RM 120</span></li>
+<li>Fuel Injector Cleaning & Calibration <span class="price">RM 150</span></li>
+<li>Valve Clearance Adjustment <span class="price">RM 80</span></li>
+<li>Top-End Engine Overhaul <span class="price">RM 300</span></li>
+<li>Full Engine Rebuild <span class="price">RM 800</span></li>
 </ul>
 </div>
 </div>
@@ -177,12 +189,12 @@
 <div class="service-card">
 <h4>⚡ Wiring & Electrical</h4>
 <ul>
-<li>Battery Diagnostics & Replacement</li>
-<li>Charging System Testing</li>
-<li>Custom Wiring Harness Installation</li>
-<li>Faulty Wiring Troubleshooting</li>
-<li>ECU Diagnostics & Error Code Reset</li>
-<li>Lighting & Indicator Repairs</li>
+<li>Battery Diagnostics & Replacement <span class="price">RM 40</span></li>
+<li>Charging System Testing <span class="price">RM 50</span></li>
+<li>Custom Wiring Harness Installation <span class="price">RM 150</span></li>
+<li>Faulty Wiring Troubleshooting <span class="price">RM 70</span></li>
+<li>ECU Diagnostics & Error Code Reset <span class="price">RM 90</span></li>
+<li>Lighting & Indicator Repairs <span class="price">RM 30</span></li>
 </ul>
 </div>
 </div>
@@ -192,12 +204,12 @@
 <div class="service-card">
 <h4>🎨 Modification & Custom</h4>
 <ul>
-<li>Aftermarket Exhaust Installation</li>
-<li>Performance Parts Upgrades</li>
-<li>Custom Handlebar & Control Setups</li>
-<li>Body Kit & Accessory Fitting</li>
-<li>Frame Modification & Welding</li>
-<li>Custom Paint & Aesthetic Upgrades</li>
+<li>Aftermarket Exhaust Installation <span class="price">RM 80</span></li>
+<li>Performance Parts Upgrades <span class="price">RM 200</span></li>
+<li>Custom Handlebar & Control Setups <span class="price">RM 100</span></li>
+<li>Body Kit & Accessory Fitting <span class="price">RM 150</span></li>
+<li>Frame Modification & Welding <span class="price">RM 250</span></li>
+<li>Custom Paint & Aesthetic Upgrades <span class="price">RM 300</span></li>
 </ul>
 </div>
 </div>
@@ -207,12 +219,12 @@
 <div class="service-card">
 <h4>🛑 Brake & Fuel</h4>
 <ul>
-<li>Brake Pad & Shoe Replacement</li>
-<li>Brake Fluid Flush & Bleeding</li>
-<li>Brake Caliper & Master Cylinder Rebuild</li>
-<li>Fuel Tank Flushing & Cleaning</li>
-<li>Fuel Pump & Filter Replacement</li>
-<li>Fuel Line & Petcock Upgrades</li>
+<li>Brake Pad & Shoe Replacement <span class="price">RM 50</span></li>
+<li>Brake Fluid Flush & Bleeding <span class="price">RM 60</span></li>
+<li>Brake Caliper & Master Cylinder Rebuild <span class="price">RM 120</span></li>
+<li>Fuel Tank Flushing & Cleaning <span class="price">RM 80</span></li>
+<li>Fuel Pump & Filter Replacement <span class="price">RM 100</span></li>
+<li>Fuel Line & Petcock Upgrades <span class="price">RM 70</span></li>
 </ul>
 </div>
 </div>
@@ -222,11 +234,11 @@
 <div class="service-card">
 <h4>🔘 Tires & Wheels</h4>
 <ul>
-<li>Tire Mounting & Balancing</li>
-<li>Puncture Repair & Tube Replacement</li>
-<li>Wheel Alignment & Truing</li>
-<li>Spoke Tightening & Wheel Re-lacing</li>
-<li>Wheel Bearing Replacement</li>
+<li>Tire Mounting & Balancing <span class="price">RM 40</span></li>
+<li>Puncture Repair & Tube Replacement <span class="price">RM 25</span></li>
+<li>Wheel Alignment & Truing <span class="price">RM 60</span></li>
+<li>Spoke Tightening & Wheel Re-lacing <span class="price">RM 80</span></li>
+<li>Wheel Bearing Replacement <span class="price">RM 70</span></li>
 </ul>
 </div>
 </div>
@@ -236,11 +248,11 @@
 <div class="service-card">
 <h4>🔗 Suspension & Drive Chain</h4>
 <ul>
-<li>Front Fork Oil Seal Replacement</li>
-<li>Rear Shock Absorber Upgrades</li>
-<li>Drive Chain Cleaning, Lubing & Tensioning</li>
-<li>Sprocket & Chain Kit Replacement</li>
-<li>Scooter CVT Belt & Roller Servicing</li>
+<li>Front Fork Oil Seal Replacement <span class="price">RM 120</span></li>
+<li>Rear Shock Absorber Upgrades <span class="price">RM 200</span></li>
+<li>Drive Chain Cleaning, Lubing & Tensioning <span class="price">RM 30</span></li>
+<li>Sprocket & Chain Kit Replacement <span class="price">RM 150</span></li>
+<li>Scooter CVT Belt & Roller Servicing <span class="price">RM 90</span></li>
 </ul>
 </div>
 </div>
@@ -250,8 +262,8 @@
 <div class="service-card">
 <h4>⭐ Special Services</h4>
 <ul>
-<li>Track Day / Race Bike Preparation</li>
-<li>Ultrasonic Component Cleaning</li>
+<li>Track Day / Race Bike Preparation <span class="price">RM 300</span></li>
+<li>Ultrasonic Component Cleaning <span class="price">RM 80</span></li>
 </ul>
 </div>
 </div>

@@ -146,9 +146,62 @@ select.form-control{
 <option value="other">📞 Other Services (Describe Below)</option>
 </select>
 
-<select id="availableServices" class="form-control mb-3">
+<select id="availableServices" class="form-control mb-3" onchange="calculateEstimate()">
 <option value="">-- Available Services --</option>
 </select>
+
+<!-- Estimated Price Box -->
+<div id="estimateBox" style="display:none; background:rgba(139,92,246,0.1); border:1px dashed #8b5cf6; border-radius:12px; padding:15px; margin-bottom:15px; justify-content:space-between; align-items:center;">
+    <span style="color:#a78bfa; font-weight:600;">💰 Estimated Price:</span>
+    <span id="estimatePrice" style="color:white; font-size:20px; font-weight:700;">RM 0</span>
+</div>
+
+<!-- Preferred Time Section -->
+<div class="mb-3">
+    <label style="color:#a78bfa; font-weight:600; margin-bottom:8px; display:block;">📅 Preferred Date & Time</label>
+    
+    <!-- Date Pickers (From & To) -->
+    <div class="row g-2 mb-2">
+        <div class="col-6">
+            <label style="color:#9ca3af; font-size:12px;">From Date</label>
+            <input type="date" id="preferredDateFrom" class="form-control">
+        </div>
+        <div class="col-6">
+            <label style="color:#9ca3af; font-size:12px;">To Date</label>
+            <input type="date" id="preferredDateTo" class="form-control">
+        </div>
+    </div>
+    
+    <!-- Time Pickers (From & To) -->
+    <div class="row g-2 mb-2">
+        <div class="col-6">
+            <label style="color:#9ca3af; font-size:12px;">From Time</label>
+            <input type="time" id="preferredTimeFrom" class="form-control">
+        </div>
+        <div class="col-6">
+            <label style="color:#9ca3af; font-size:12px;">To Time</label>
+            <input type="time" id="preferredTimeTo" class="form-control">
+        </div>
+    </div>
+
+    <!-- Real-time Past Time Warning -->
+    <div id="pastTimeWarning" style="display:none; color:#fbbf24; font-size:12px; margin-top:5px; margin-bottom:5px;">
+        ⚠️ Past time is not allowed. Please select a time from now onwards.
+    </div>
+
+    <!-- Flexible Checkbox -->
+    <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" id="flexibleTime" onchange="toggleTimeSelection()">
+        <label class="form-check-label" for="flexibleTime" style="color:#9ca3af; font-size:14px; cursor:pointer;">
+            ⏰ I am flexible with the timing (Whenever I am free)
+        </label>
+    </div>
+
+    <!-- Validation Error Message -->
+    <div id="timeError" style="display:none; color:#ef4444; font-size:13px; margin-top:5px;">
+        ⚠️ Please select your preferred time or check the 'Whenever I am free' box.
+    </div>
+</div>
 
 <div id="issueSection">
 <textarea id="issueDescription" class="form-control mb-3" rows="4" placeholder="Describe Your Issue (Optional)" maxlength="1000"></textarea>
@@ -171,12 +224,12 @@ select.form-control{
 
 <p><i class="bi bi-geo-alt-fill text-purple"></i> <strong>Location:</strong> Kulim, Kedah</p>
 <p><i class="bi bi-telephone-fill text-purple"></i> <strong>Phone:</strong> +60 11-1734 9896</p>
-<p><i class="bi bi-envelope-fill text-purple"></i> <strong>Email:</strong> balamotorsmalaysia@Gmail.com</p>
+<p><i class="bi bi-envelope-fill text-purple"></i> <strong>Email:</strong> balamotorsmalaysia@gmail.com</p>
 <p><i class="bi bi-clock-fill text-purple"></i> <strong>Hours:</strong> Sunday - Saturday | 8AM - 10PM</p>
 <p style="font-size:13px;color:#a78bfa;margin-top:5px;">⚡ Freelance Timing - Flexible & Available Daily!</p>
 
 <iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1234567890!2d100.123456!3d5.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDcnMjQuNCJOIDEwMMKwMDcnMjQuNCJF!5e0!3m2!1sen!2smy!4v1234567890"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4194.764864587292!2d100.57176031076054!3d5.362786635539501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304acb0470b19287%3A0x251366f91ad12b47!2sBALA%20MOTORS!5e1!3m2!1sen!2smy!4v1790273824812!5m2!1sen!2smy"
 width="100%"
 height="250"
 style="border:0;"
